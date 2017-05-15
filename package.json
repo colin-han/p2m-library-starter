@@ -1,0 +1,24 @@
+{
+  "_moduleName": "p2m.library",
+  "name": "p2m-library-starter",
+  "version": "1.0.0",
+  "description": "A template project of a shared library for ShangHai PTM inc.",
+  "main": "main/index.js",
+  "repository": "https://github.com/colin-han/p2m-library-starter.git",
+  "author": "Colin Han <colin@p2m.net.cn>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-preset-p2m-library": "^1.1.0",
+    "chai": "^3.5.0",
+    "del": "^2.2.2",
+    "mocha": "^3.3.0"
+  },
+  "scripts": {
+    "build": "node tools/build.js",
+    "prepublish": "yarn build && yarn test",
+    "test": "mocha test/**/*.spec.js",
+    "test:watch": "mocha --reporter min --watch test/**/*.spec.js",
+    "test:cover": "babel-node ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha test/**/*.spec.js"
+  }
+}
